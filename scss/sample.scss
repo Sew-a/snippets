@@ -1,0 +1,83 @@
+@import "_mixin.scss";
+@import "_any.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+// font-family: 'Play', sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background: url("../img/jj5fe505k0w21.jpg");
+  background-attachment: fixed;
+  @include cover-background;
+}
+
+.block {
+  position: relative;
+  background: rgb(250, 76, 70);
+  @include centered;
+  @include box(460px, 600px);
+  padding: 20px 40px;
+
+  background: url("../img/istockphoto-1061119906-612x612.jpg");
+  @include cover-background;
+  @include flex-center;
+
+  .section {
+    position: relative;
+    background: rgb(248, 248, 248);
+    color: rgb(39, 36, 36);
+    padding: 30px 20px;
+    font-family: "Play";
+    @include flex-center;
+
+    p {
+      @include font-size(17px, 2px);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+    }
+    a {
+      display: block;
+      padding: 11px 28px;
+      font: 700 16px "Play";
+      background: rgb(255, 96, 96);
+      color: rgb(252, 255, 60);
+      border-radius: 4px;
+    }
+
+    span {
+      @include font-size(14px, 1px);
+      background: rgb(255, 109, 109);
+      color: #fff;
+      padding: 1em 2em;
+      text-align: justify;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media (max-width: 764px) {
+  .block {
+    @include box(350px, auto);
+    padding: 20px;
+    .section {
+      padding: 15px;
+      p {
+        font-size: 15px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}

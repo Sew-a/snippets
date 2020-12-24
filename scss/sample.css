@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url("../img/jj5fe505k0w21.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.block {
+  position: relative;
+  background: #fa4c46;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 460px;
+  height: 600px;
+  border-radius: 4px;
+  padding: 20px 40px;
+  background: url("../img/istockphoto-1061119906-612x612.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.block .section {
+  position: relative;
+  background: #f8f8f8;
+  color: #272424;
+  padding: 30px 20px;
+  font-family: "Play";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.block .section p {
+  font: 400 17px "Play";
+  padding: 20px 0;
+  text-align: center;
+}
+
+.block .section h3 {
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.block .section a {
+  display: block;
+  padding: 11px 28px;
+  font: 700 16px "Play";
+  background: #ff6060;
+  color: #fcff3c;
+  border-radius: 4px;
+}
+
+.block .section span {
+  font: 400 14px "Play";
+  background: #ff6d6d;
+  color: #fff;
+  padding: 1em 2em;
+  text-align: justify;
+  border-radius: 4px;
+}
+
+@media (max-width: 764px) {
+  .block {
+    width: 350px;
+    height: auto;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .block .section {
+    padding: 15px;
+  }
+  .block .section p {
+    font-size: 15px;
+  }
+  .block .section span {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=sample.css.map */
