@@ -4,19 +4,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 // font-family: 'Play', sans-serif;
 
+$bg-col: rgb(250, 76, 70);
+$text-col: rgb(39, 36, 36);
+$in-col: rgb(252, 252, 252);
+
+:root {
+  --color-background: #{$in-col};
+  --color-text: #{$text-col};
+}
+
+.dark-mode {
+  --color-background: #{$text-col};
+  --color-text: #{$in-col};
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  background: url("../img/jj5fe505k0w21.jpg");
-  background-attachment: fixed;
-  @include cover-background;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.color-switch {
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  outline: none;
+  background: none;
+  &:before {
+    content: "";
+    display: block;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(248, 99, 99);
+    cursor: pointer;
+  }
 }
 
 .block {
   position: relative;
-  background: rgb(250, 76, 70);
+  background: $bg-col;
   @include centered;
   @include box(460px, 600px);
   padding: 20px 40px;
@@ -27,8 +58,8 @@ body {
 
   .section {
     position: relative;
-    background: rgb(248, 248, 248);
-    color: rgb(39, 36, 36);
+    background: var(--color-background);
+    color: var(--color-text);
     padding: 30px 20px;
     font-family: "Play";
     @include flex-center;
@@ -50,15 +81,15 @@ body {
       display: block;
       padding: 11px 28px;
       font: 700 16px "Play";
-      background: rgb(255, 96, 96);
+      background: $bg-col;
       color: rgb(252, 255, 60);
       border-radius: 4px;
     }
 
     span {
       @include font-size(14px, 1px);
-      background: rgb(255, 109, 109);
-      color: #fff;
+      background: $bg-col;
+      color: $in-col;
       padding: 1em 2em;
       text-align: justify;
       border-radius: 4px;

@@ -14,16 +14,42 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --color-background: #fcfcfc;
+  --color-text: #272424;
+}
+
+.dark-mode {
+  --color-background: #272424;
+  --color-text: #fcfcfc;
+}
+
 body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: url("../img/jj5fe505k0w21.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.color-switch {
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  outline: none;
+  background: none;
+}
+
+.color-switch:before {
+  content: "";
+  display: block;
+  opacity: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f86363;
+  cursor: pointer;
 }
 
 .block {
@@ -57,8 +83,8 @@ body {
 
 .block .section {
   position: relative;
-  background: #f8f8f8;
-  color: #272424;
+  background: var(--color-background);
+  color: var(--color-text);
   padding: 30px 20px;
   font-family: "Play";
   display: -webkit-box;
@@ -92,15 +118,15 @@ body {
   display: block;
   padding: 11px 28px;
   font: 700 16px "Play";
-  background: #ff6060;
+  background: #fa4c46;
   color: #fcff3c;
   border-radius: 4px;
 }
 
 .block .section span {
   font: 400 14px "Play";
-  background: #ff6d6d;
-  color: #fff;
+  background: #fa4c46;
+  color: #fcfcfc;
   padding: 1em 2em;
   text-align: justify;
   border-radius: 4px;
