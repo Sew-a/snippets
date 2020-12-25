@@ -48,6 +48,13 @@ body {
   left: 100px;
   font: 24px "Yellowtail";
   letter-spacing: 0.4px;
+  cursor: pointer;
+  -webkit-transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_logo:hover {
+  color: #fa4c46;
 }
 
 .menu_icon {
@@ -157,7 +164,7 @@ body {
 .body_line_all {
   position: absolute;
   top: 0;
-  left: 280px;
+  left: 23%;
   width: 1px;
   height: 130%;
   z-index: 1;
@@ -272,7 +279,7 @@ section {
   padding: 11px 28px;
   font: 700 16px "Play";
   background: #fa4c46;
-  color: #fcff3c;
+  color: var(--color-text);
   border-radius: 4px;
 }
 
