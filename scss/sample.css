@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,12 +18,16 @@ a {
 
 :root {
   --color-background: #fcfcfc;
-  --color-text: #272424;
+  --color-text: #2d2d33;
 }
 
 .dark-mode {
-  --color-background: #272424;
+  --color-background: #2d2d33;
   --color-text: #fcfcfc;
+}
+
+.to_bottom {
+  background: var(--color-background);
 }
 
 body {
@@ -32,33 +37,171 @@ body {
           box-sizing: border-box;
   background: var(--color-background);
   color: var(--color-text);
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_logo {
+  z-index: 9999;
+  position: fixed;
+  top: 25px;
+  left: 100px;
+  font: 24px "Yellowtail";
+  letter-spacing: 0.4px;
+}
+
+.menu_icon {
+  z-index: 9999;
+  position: fixed;
+  top: 30px;
+  right: 140px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  font-weight: lighter;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menu_icon .line {
+  width: 85%;
+  height: 3%;
+  background: var(--color-text);
+  -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_icon .toggle_line_1 {
+  -webkit-transform: rotate(45deg) translate(7px, 0);
+          transform: rotate(45deg) translate(7px, 0);
+}
+
+.menu_icon .toggle_line_2 {
+  -webkit-transform: rotate(-45deg) translate(7px, 0);
+          transform: rotate(-45deg) translate(7px, 0);
+}
+
+.nav__list {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-background);
+  top: -30%;
+  right: 0;
+  opacity: 0;
+  display: inline-block;
+  text-align: right;
+  padding: 100px 0 0 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav__list li {
+  margin-right: 130px;
+}
+
+.nav__list li a {
+  margin-bottom: 15px;
+  border-bottom-style: none;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+  color: var(--color-text);
+  font: 700 28px "Bebas Neue";
+  line-height: 2em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  -webkit-transition: 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.nav__list li a:hover {
+  color: #fa4c46;
+}
+
+.nav__list.nav__active {
+  opacity: 1;
+  z-index: 999;
+  top: 0;
 }
 
 .color-switch {
   position: fixed;
   bottom: 60px;
-  right: 40px;
-  outline: none;
+  right: 120px;
+  width: 40px;
+  height: 40px;
   background: none;
   z-index: 99;
+  cursor: pointer;
+  -webkit-transition: 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-.color-switch:before {
-  content: "";
-  display: block;
-  opacity: 1;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #f86363;
-  cursor: pointer;
-  z-index: 999;
+.color-switch:hover {
+  color: #fa4c46;
+}
+
+.body_line_all {
+  position: absolute;
+  top: 0;
+  left: 280px;
+  width: 1px;
+  height: 130%;
+  z-index: 1;
+  background: var(--color-text);
 }
 
 section {
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+.somnia {
+  width: initial;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.somnia h1 {
+  font: 700 7em "Bebas Neue";
+  letter-spacing: 8px;
+}
+
+.somnia p {
+  padding: 0 0 20px 0;
+  text-align: center;
+  width: 400px;
+  font: 500 17px "play";
+  letter-spacing: 1px;
+  line-height: 22px;
 }
 
 .block {
@@ -147,7 +290,7 @@ section {
   max-width: 1300px;
   height: auto;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 60px;
   font-family: "Bebas Neue", cursive;
   text-align: center;
   display: -ms-grid;
