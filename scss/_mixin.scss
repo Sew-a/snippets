@@ -38,3 +38,42 @@
 @mixin font-size($font-size, $letter-spacing: normal) {
   font: 400 $font-size "Play";
 }
+
+@mixin a-button($base, $hover, $link) {
+  a {
+    background-color: $base;
+    color: white;
+    border-radius: 3px;
+    margin: 2px;
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:visited {
+      color: $link;
+    }
+  }
+}
+
+//   Before
+
+@mixin label($text: "Code", $background: $yellow, $color: rgba(black, 0.5)) {
+  position: relative;
+  &:before {
+    background: $background;
+    color: $color;
+    content: $text;
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    height: 1rem;
+    left: 0;
+    letter-spacing: 0.1em;
+    line-height: 1rem;
+    padding: 0 0.5em;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+  }
+}
