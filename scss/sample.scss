@@ -203,6 +203,7 @@ section {
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-auto-rows: auto;
   grid-gap: 20px;
   grid-auto-flow: dense;
   justify-items: center;
@@ -211,7 +212,8 @@ section {
   .block {
     position: relative;
     background: $bg-col;
-    @include box(400px, 600px);
+    @include box(460px, 600px);
+    margin-top: 10px;
     padding: 20px 40px;
     z-index: 9;
     background: url("../img/istockphoto-1061119906-612x612.jpg");
@@ -230,6 +232,7 @@ section {
       color: var(--color-text);
       padding: 30px 20px;
       font-family: "Play";
+      height: auto;
       @include flex-center;
 
       img {
@@ -427,8 +430,8 @@ section {
 }
 
 @media (max-width: 764px) {
-  .block {
-    @include box(350px, auto);
+  .b-dark .block {
+    width: 380px;
     padding: 20px;
     .section {
       padding: 15px;
@@ -438,6 +441,19 @@ section {
       span {
         font-size: 12px;
       }
+    }
+  }
+
+  .b-forth .integrated .black-box {
+    width: 340px;
+  }
+
+  .b-forth .integrated {
+    h1 {
+      width: 340px;
+    }
+    p {
+      width: 340px;
     }
   }
 }
