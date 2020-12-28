@@ -5,11 +5,13 @@ $(document).ready(function () {
   const list_1 = document.getElementById("line-though_1");
   const list_2 = document.getElementById("line-though_2");
 
-  const toggleButton = document
-    .getElementById("color-switch")
-    .addEventListener("click", function () {
+  const toggleButton = document.getElementById("color-switch")
+      toggleButton.addEventListener("click", function () {
       document.body.classList.toggle("dark-mode");
+      toggleButton.classList.add("round");
+
     });
+    
 
   document.getElementById("menu_icon").addEventListener("click", function () {
     list_1.classList.toggle("toggle_line_1");

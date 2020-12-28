@@ -150,9 +150,12 @@ header {
   background: none;
   z-index: 99;
   cursor: pointer;
-  transition: 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
   &:hover {
     color: $bg-col;
+  }
+  &.round {
+    transform: rotate(360deg);
   }
 }
 
@@ -346,6 +349,7 @@ section {
 
 //   ------------------- Section 4 ------------------------------
 .b-forth {
+  position: relative;
   background: rgb(38, 39, 58);
   display: grid;
   justify-items: center;
@@ -354,25 +358,31 @@ section {
   font-family: "Play";
 
   .integrated {
-    h1 {
+    position: relative;
+    .fixbox {
+      top: 199px;
+      left: 60px;
+      position: absolute;
       width: 400px;
-      margin: 60px 20px;
-      text-align: left;
-      font-size: 37px;
-      letter-spacing: 1.5px;
-      color: #fff;
-    }
-    span {
-      margin-left: 30px;
-      background: var(--color-background);
-      padding: 10px 19px;
-      border-radius: 6px;
-    }
-    p {
-      margin: 40px 20px;
-      width: 400px;
-      color: #fff;
-      font: 400 17px "play";
+      height: auto;
+      h1 {
+        margin: 60px 0px;
+        text-align: left;
+        font-size: 37px;
+        letter-spacing: 1.5px;
+        color: #fff;
+      }
+      span {
+        background: var(--color-background);
+        padding: 10px 19px;
+        border-radius: 6px;
+      }
+      p {
+        margin: 40px 0px;
+        width: 400px;
+        color: #fff;
+        font: 400 17px "play";
+      }
     }
 
     .black-box {
@@ -412,6 +422,31 @@ section {
         }
       }
     }
+  }
+}
+
+//  ------------------ sec 5 ------------------------------
+.bord-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  ion-icon {
+    color: $bg-col;
+    margin-bottom: 40px;
+    font-size: 42px;
+  }
+
+  p {
+    width: 500px;
+    text-align: center;
+    font: 500 26px/36px "play";
+  }
+  a {
+    margin-top: 30px;
+    font: 300 18px "Play";
+    border-bottom: 1px solid;
   }
 }
 
