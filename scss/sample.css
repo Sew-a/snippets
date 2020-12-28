@@ -261,6 +261,7 @@ section {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  opacity: 0;
 }
 
 .b-dark .block:nth-child(2) {

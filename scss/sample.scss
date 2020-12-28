@@ -196,6 +196,8 @@ section {
     @include cover-background;
     @include flex-center;
 
+    opacity: 0;
+
     &:nth-child(2) {
       background: url("../img/minimalistic.jpg");
     }
