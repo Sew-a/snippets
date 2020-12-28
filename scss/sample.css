@@ -544,6 +544,10 @@ section {
   border-bottom: 1px solid;
 }
 
+.footer {
+  background: #26273a;
+}
+
 @media (max-width: 1200px) {
   .menu_logo {
     left: 70px;
