@@ -1,18 +1,6 @@
-@import "_mixin.scss";
-@import "_any.scss";
-
-@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
-
-// font-family: 'Play', sans-serif;
-// font-family: 'Bebas Neue', cursive;
-// font-family: 'Oswald', sans-serif;
-
-$bg-col: rgb(250, 76, 70);
-$text-col: rgb(45, 45, 51);
-$in-col: rgb(252, 252, 252);
+@import "abstracts/_mix.scss";
+@import "abstracts/_fonts.scss";
+@import "abstracts/_color.scss";
 
 :root {
   --color-background: #{$in-col};
@@ -103,7 +91,8 @@ header {
 
 .nav__list {
   position: fixed;
-  @include box(100%, 100%);
+  width: 100%;
+  height: 100%;
   background: var(--color-background);
   top: -30%;
   right: 0;
@@ -215,7 +204,8 @@ section {
   .block {
     position: relative;
     background: $bg-col;
-    @include box(460px, 600px);
+    width: 400px;
+    height: 600px;
     margin-top: 10px;
     padding: 20px 40px;
     z-index: 9;
@@ -244,7 +234,7 @@ section {
       }
 
       p {
-        @include font-size(17px, 2px);
+        font-size: 17px;
         padding: 20px 0;
         text-align: center;
       }
@@ -266,7 +256,7 @@ section {
       }
 
       span {
-        @include font-size(14px, 1px);
+        font-size: 18px;
         background: $bg-col;
         color: $in-col;
         padding: 1em 2em;

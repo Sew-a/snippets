@@ -1,0 +1,38 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+  box-sizing: border-box;
+}
+
+@mixin width($width) {
+  position: relative;
+  width: $width;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin before($content: "") {
+  content: $content;
+  position: absolute;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
