@@ -9,3 +9,11 @@ const regular = lazy.map(lax => {
 });
 
 console.group(regular);
+
+//  REGEX
+
+const paragraph = "My imagination is so hard to understand, I screwing up everyday. So question is how can I dont do that again";
+const regex = /imagin/g;
+
+const dec = paragraph.replace(regex, "HOUU");
+console.log(dec);
