@@ -1,0 +1,188 @@
+/////html
+
+ <div class="form__select">
+                                <div class="options-container">
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="USA" name="country" />
+                                        <label for="USA">USA</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="Germany" name="country" />
+                                        <label for="Germany">Germany</label>
+                                    </div>
+                                </div>
+                                <div class="selected">
+                                    Select Country
+                                </div>
+                            </div>
+
+
+////////scss
+
+
+.form__select {
+    display:flex;
+    flex-direction:column ;
+    width:643px;
+
+    & + .form__select {
+        margin-left:15px;
+        @media(max-width:1280px) {
+            margin-left:0px;
+        }
+    }
+   
+    .options-container {
+       max-height: 0;
+       width:643px;
+       opacity: 0;
+       transition: all 0.5s;
+       border-radius: 8px;
+       order: 1;
+       margin-top: 65px;
+       border:1px solid #c0c0c0;
+       background-color: #fff;
+       position: absolute;
+       z-index: 100;
+       text-align: center;
+        border: 1px solid #1BA7B6;
+       overflow: scroll;
+       scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none;  /* IE 10+ */
+
+       &--businessDay {
+        max-width: 100px;
+        margin-right: 10px;
+    }
+   
+       &::-webkit-scrollbar {
+           width: 0px;
+           background: transparent; /* make scrollbar transparent */
+       }
+
+        label {
+            cursor: pointer;
+            color: #828282 !important;
+        } width: 80%;
+        }
+   }
+   
+   .selected {
+       background: #FFFFFF;
+       box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+       order: 0;
+       border: 1px solid #1BA7B6;
+       border-radius: 10px;
+       position: relative;
+       margin-bottom: 15px;
+       padding: 12px 16px;
+       color: #828282;
+   }
+   
+   .selected::after {
+       content: '';
+       position: absolute;
+       background-image: url('../img/selectArrow.svg');
+       background-repeat: no-repeat;
+       height: 100%;
+       width: 32px;
+       right: 10px;
+       top:26px;
+       transition: all 0.4s;
+   }
+
+   .selected--businessDay::after {
+        content: '';
+        position: absolute;
+        background-image: url('../img/selectArrow.svg');
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 32px;
+        right: 0px;
+        top:20px;
+        transition: all 0.4s;
+   }
+    
+   .options-container.active {
+       max-height: 240px;
+       opacity: 1;
+       margin-top: 65px;
+   }
+   
+   .option, .selected {
+       padding: 17px 24px;
+       cursor: pointer;
+
+       &--businessDay {
+           padding:10px 11px;
+       }
+   }
+   
+   .option:hover {
+       background: #eeeaeafb;
+       label {
+           color:$blueColor !important;
+       }
+   }
+   
+ 
+   .option  {
+       .radio {
+           display:none;
+       }
+       label {
+           transition: all 0.2s ease-in-out;
+           text-align: center;
+           margin-bottom:0;
+       }
+   }
+   }
+
+   @media(max-width:1360px) {
+       width: 500px;
+   }
+   @media(max-width:1070px) {
+    width: 400px;
+    }
+    @media(max-width:876px) {
+        width: 300px;
+    }
+    @media(max-width:676px) {
+        width: 200px;
+    }
+    @media(max-width:480px) {
+        width: 100%;
+    }
+}
+
+
+////// js
+
+// Form selects
+    const selectedAll = document.querySelectorAll(".selected");
+    selectedAll.forEach(selected => {
+        const optionsContainer = selected.previousElementSibling
+
+        const optionsList = optionsContainer.querySelectorAll('.option')
+
+        selected.addEventListener('click', () => {
+            if (optionsContainer.classList.contains('active')) {
+                optionsContainer.classList.remove('active')
+            } else {
+                let currentActive = document.querySelector('.options-container.active')
+                if (currentActive) {
+                    currentActive.classList.remove('active')
+                }
+                optionsContainer.classList.add('active');
+            }
+        })
+
+        optionsList.forEach(option => {
+            option.addEventListener('click', () => {
+                selected.innerHTML = option.querySelector('label').innerHTML;
+                optionsContainer.classList.remove('active')
+            })
+        })
+    })
+
+
